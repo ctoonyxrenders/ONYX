@@ -1,0 +1,14 @@
+/* Fiverr-style conversation CSS */
+
+.msg-bubble:hover {
+    background-color: #f5f5f5;
+}
+
+.msg-bubble:hover .reply-icon {
+    opacity: 1 !important;
+}
+
+.reply-icon:hover {
+    color: #1890ff !important;
+    transform: scale(1.1);
+}

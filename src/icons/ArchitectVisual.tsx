@@ -1,0 +1,35 @@
+import React from "react";
+
+const ArchitectVisual = () => {
+  return (
+    <svg
+      className="w-[90px] h-[90px]"
+      viewBox="0 0 90 90"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      role="img"
+      aria-label="Architect Visual"
+    >
+      <rect width="90" height="90" fill="url(#pattern0_713_439)" />
+      <defs>
+        <pattern
+          id="pattern0_713_439"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
+          <use xlinkHref="#image0_713_439" transform="scale(0.0111111)" />
+        </pattern>
+        <image
+          id="image0_713_439"
+          width="90"
+          height="90"
+          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAECUlEQVR4nO2cPWtUQRSGVxBXbPxIk8ZIIoIYBH+LVjYKdlYqIoKN2wipkl8QldiEgBYWQYI2Yn6ChZJIstgrKChBeGR0Iutm79fOnJkzd+dtttjdO+99du6ZMx9nO52srKysrKysrOQFTANrwFfgI3A9tqfWCTgNbHFQC7G9TQLkfWXYHiDPANtUq9dRKOAS8Az4DOzZ1yfAfCdByCphA3eBX4yWgX4zhXChOoyYH516epAiZBWwG0COB7tmuFiq8ZleIpD3dU8b5F7TzyYAeV/yMXsccCiD7QG0GSAvSBocGxjtg70sZcwJFNAFNmrcQCqwd7RCXm9wEynA/pE65FRg77YBcgqwn/pq2Hnwohr0htQAacH1hGCb6frFcXyJZQgUw16373nPRoaAScC+0+SaZYv2vm+8OwT7D2ShH3YUKJ+wHza5Vlkjaz4hj4D9H+SB98/ZiUCRdoGTw99rAMgHbD+QbQNm+6lIi47X7hZArorlBvKch0feBbY/yPbiZo+vSObxnvHcXjcQZBfY/rMfs5FaYdQbbMJDHgu2mID7FUZ3gFnHNo4AL0va6ANnBafQC62HTXzI6mD3fIcR4HCkcDF5YYTia4bqyWp7dgjY/UiQJwp2PzJk/3mywph9O3BM1hunQ6d+E9uTY8FmkiGHgk2GLA+bDFm+Z5Mhy8MmQ3aG3c95sjzsfoYsD7ufIQvKxtpd7TO+qj3IJOS4kRoC8pztDPqm375E5OwCOAN8Urdy13LI7YONXsjtgY1+yOnDJh3I6cImPcjpwUZPClekPZfrq1ACPfmVPVi5lWzPTgTy0QbVv/pgxw4XRuageMn3Dxwb1laalwTkCi9FZ7PVleapDRc1VhL/hYuG5wD1hBGNkIdg+4IcD7amcFF2sDLl0rwkIGsszUsKMjDrWnkQozSvqcEpYFMIcJMZn3OZh6fSvGsuHqoMHgKu2n3BmNPqbY+wi9K/KtgfXNqva/IYsBIJsm/Y3ZL3FynWF5e2m5icJ8BGKuULRN5L8xqMR6sS7RaZeS8FWfJ8tqc2p3226WrIy2Qk5PnsGvfk9Sx4XVPnpSEHroPUB3losLoFvJOCHKgOUi/kggFyRTLJF6qpCT4ODDZ+yiH160tAlgATFbI1sDzuihV/JzWiNSM+wkj0cGGWF01CbhtbGHMG+Va6MMcFdnTI1sRl10cfmJJx5/7oRw8XA0aeJ7FZOUbPVtGTrZHj5h8L1e6fFahmL11S0ZOt4RsVZlLu2XryZOB1iRnzJ1ePQ8XfgMsC4XrygNFvQyZ+Ai+AK6M2O1sAezs4ZGvyEfAdeGPDyIlOgqIe7DiQ2ybKY7aetYsWw97JkAVkNlLNHp+d7a4GXbTPysrKysrKysrKyupI6TfHuI0UALtNJwAAAABJRU5ErkJggg=="
+        />
+      </defs>
+    </svg>
+  );
+};
+
+export default ArchitectVisual;

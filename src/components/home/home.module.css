@@ -1,0 +1,12 @@
+.slider {
+  animation: slide linear infinite;
+}
+
+.slider:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-33.3333%); }
+}

@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================================
+   Responsive system
+   -------------------------------------------------------------------------
+   1. @layer base        tokens and element defaults
+   2. @layer components  reusable classes (.heading, .btn-pill, .section, ...)
+   3. utilities          section/component-specific control in markup
+
+   Everything reusable lives in @layer components, so any Tailwind utility on
+   the same element (text-*, leading-*, tracking-*, max-w-*, px-*, ...) wins.
+   Reusable classes only set defaults; they never set widths.
+
+   Breakpoints: only Tailwind's screens (sm md lg xl 3xl 4xl), used here via
+   @screen. There are no custom media queries.
+   ========================================================================= */
+
+@layer base {
+  :root {
+    /* Colors */
+    --color-brand: #114046;
+    --color-secondary: #7d7d7d;
+    --color-subtle: #bac3c833;
+    --color-border-light: rgba(0, 0, 0, 0.15);
+
+    /* Layout: the values of the site-wide section pattern
+       "px-6 xl:px-20 py-10 md:py-16 lg:py-20". */
+    --gutter: 1.5rem;
+    --section-y: 2.5rem;
+
+    /* Height of the fixed header. Header rows are exactly this tall and
+       AppWrapper offsets the page by it, so the two cannot drift apart. */
+    --header-h: 3.5rem;
+  }
+
+  @screen md {
+    :root {
+      --section-y: 4rem;
+      --header-h: 4.25rem;
+    }
+  }
+
+  @screen lg {
+    :root {
+      --section-y: 5rem;
+      --header-h: 5rem;
+    }
+  }
+
+  @screen xl {
+    :root {
+      --gutter: 5rem;
+    }
+  }
+
+  /* Large screens: from 3xl the public site scales as a whole. Tailwind sizes
+     are rem-based, so scaling the root font-size scales type, spacing, gutters
+     and the header together, keeping the desktop composition.
+     The scale is damped rather than proportional to the viewport: 16px at
+     2048px rising linearly to 24px at 3840px (x1.5 while the viewport grows
+     x1.875), then capped. Full proportional scaling made every section 1.875x
+     taller at 4K. The formula equals 16px at 2048px and 24px at 3840px, so
+     there is no jump at either breakpoint.
+     The dashboard has no [data-fluid-root] and keeps normal sizing. */
+  @screen 3xl {
+    html:has([data-fluid-root]) {
+      font-size: clamp(16px, calc(6.857px + 0.4464vw), 24px);
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-century-gothic);
+    background-color: var(--color-subtle);
+    overflow-x: clip;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* ----- Typography ------------------------------------------------------
+     Size and weight only. Line-height comes from the text-* step and can be
+     overridden with leading-*; width is always the component's decision. */
+
+  /* .sub-heading is an alias kept for existing markup. */
+  .heading,
+  .sub-heading {
+    @apply text-3xl md:text-5xl;
+  }
+
+  /* Body text. .para is an alias kept for existing markup. */
+  .para,
+  .text-small {
+    @apply text-xs lg:text-base xl:text-lg font-light;
+  }
+
+  .text-small-bold {
+    @apply text-xs lg:text-base xl:text-lg font-bold;
+  }
+
+  /* Captions and taglines. */
+  .text-x-small {
+    @apply text-xs xl:text-sm font-light;
+  }
+
+  /* Navigation and menu text (header, mega menu, mobile menu). */
+  .nav {
+    @apply text-xs lg:text-sm xl:text-base;
+  }
+
+  .nav-medium {
+    @apply font-semibold;
+  }
+
+  .body-small {
+    @apply text-xs md:text-sm lg:text-base;
+  }
+
+  .body-small-bold {
+    @apply text-sm md:text-base lg:text-lg font-bold;
+  }
+
+  .label {
+    @apply text-xs md:text-sm lg:text-base uppercase tracking-wider;
+  }
+
+  .tile-heading {
+    font-weight: 600;
+    letter-spacing: -0.5px;
+  }
+
+  .tile-text {
+    font-weight: 400;
+  }
+
+  /* Poppins was retired; kept so existing markup resolves to the site font. */
+  .poppins {
+    font-family: var(--font-century-gothic);
+  }
+
+  /* ----- Buttons --------------------------------------------------------- */
+
+  .btn-pill {
+    @apply rounded-full shadow-2xl transition-colors px-8 py-2 lg:px-10 lg:py-4 lg:text-sm min-w-[210px];
+  }
+
+  .btn-theme {
+    background-color: var(--color-brand);
+    border: 1px solid var(--color-brand);
+    color: #fff;
+  }
+
+  /* ----- Layout ----------------------------------------------------------
+     Vertical rhythm: every content section owns --section-y (40/64/80px) at
+     its top and bottom, so consecutive sections sit 2 x --section-y apart and
+     no section adds outer margins on top of that.
+       .section    gutters + vertical rhythm (the default)
+       .section-y  vertical rhythm only, for sections that keep their own
+                   horizontal padding
+     Intentional exceptions keep their own spacing: full-screen hero and
+     banners, the logo strip under the hero, statistics bands, sliders and
+     galleries, legal-document internals and the vw-based job pages. */
+  .section {
+    padding-inline: var(--gutter);
+    padding-block: var(--section-y);
+  }
+
+  .section-y {
+    padding-block: var(--section-y);
+  }
+
+  /* Readable measure for long-form text (legal pages): about 75-90
+     characters per line, centred. rem-based, so it scales with the type. */
+  .content-readable {
+    max-width: 44rem;
+    margin-inline: auto;
+  }
+
+  /* ----- Colors ----------------------------------------------------------
+     Named colors used by the header and menus. The accent teal (#4a5f66)
+     stays written as text-[#4a5f66] where the design uses it, so the two
+     teals are never merged into one token. Variants (hover:, group-hover:)
+     work on these classes. */
+  .text-brand {
+    color: var(--color-brand);
+  }
+
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+
+  .border-brand {
+    border-color: var(--color-brand);
+  }
+
+  .border-light {
+    border-color: var(--color-border-light);
+  }
+
+  .bg-subtle {
+    background-color: var(--color-subtle);
+  }
+}

@@ -1,0 +1,180 @@
+.svgIcon {
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+/* Tablet devices (between 768px - 1536px) */
+@media (max-width: 1536px) {
+    .svgIcon {
+        width: 3vw;
+        height: 3vw;
+    }
+}
+
+/* Small tablets & large phones (between 481px - 767px) */
+@media (max-width: 768px) {
+    .svgIcon {
+        width: 5vw;
+        height: 5vw;
+    }
+}
+
+/* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+    .svgIcon {
+        width: 6vw;
+        height: 6vw;
+    }
+}
+
+/* Very small screens (below 360px) */
+@media (max-width: 360px) {
+    .svgIcon {
+        width: 6vw;
+        height: 6vw;
+    }
+}
+
+
+/* Location Icon CSS */
+
+.svgIconLocation {
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+/* Tablet devices (between 768px - 1024px) */
+@media (max-width: 1024px) {
+    .svgIconLocation {
+        width: 2vw;
+        height: 2vw;
+    }
+}
+
+/* Small tablets & large phones (between 481px - 767px) */
+@media (max-width: 768px) {
+    .svgIconLocation {
+        width: 3vw;
+        height: 3vw;
+    }
+}
+
+/* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+    .svgIconLocation {
+        width: 5vw;
+        height: 5vw;
+    }
+}
+
+/* Very small screens (below 360px) */
+@media (max-width: 360px) {
+    .svgIconLocation {
+        width: 5vw;
+        height: 5vw;
+    }
+}
+
+/* CopyWrite Icon CSS */
+
+
+.svgIconCopywrite {
+    width: 0.8vw;
+    height: 0.8vw;
+}
+
+/* Tablet devices (between 768px - 1024px) */
+@media (max-width: 1024px) {
+    .svgIconCopywrite {
+        width: 1.2vw;
+        height: 1.2vw;
+    }
+}
+
+/* Small tablets & large phones (between 481px - 767px) */
+@media (max-width: 768px) {
+    .svgIconCopywrite {
+        width: 1.2vw;
+        height: 1.2vw;
+    }
+}
+
+/* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+    .svgIconCopywrite {
+        width: 2.5vw;
+        height: 2.5vw;
+        margin-bottom: 2px;
+    }
+}
+
+/* Very small screens (below 360px) */
+@media (max-width: 360px) {
+    .svgIconCopywrite {
+        width: 3vw;
+        height: 3vw;
+    }
+}
+
+
+/* File Download */
+
+
+.svgIconDownload {
+    width: 200px;
+    height: 200px;
+}
+
+/* Tablet devices (between 768px - 1024px) */
+@media (max-width: 1024px) {
+    .svgIconDownload {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Small tablets & large phones (between 481px - 767px) */
+@media (max-width: 768px) {
+    .svgIconDownload {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+    .svgIconDownload {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+.svgIconYoutube {
+    width: 1.1vw;
+    height: 1.1vw;
+}
+
+/* Tablet devices (between 768px - 1536px) */
+@media (max-width: 1536px) {
+    .svgIconYoutube {
+        width: 2.25vw;
+        height: 2.25vw;
+    }
+}
+
+/* Small tablets & large phones (between 481px - 767px) */
+@media (max-width: 768px) {
+    .svgIconYoutube {
+        width: 4vw;
+        height: 4vw;
+    }
+}
+
+/* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+    .svgIconYoutube {
+        width: 4.3vw;
+        height: 4.3vw;
+    }
+}

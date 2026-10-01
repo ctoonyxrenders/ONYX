@@ -1,0 +1,11 @@
+import React from 'react'
+
+function UpArrow() {
+    return (
+        <svg width="15" height="15" viewBox="0 0 32 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 27L31.5885 0H0.411543L16 27Z" fill="black" />
+        </svg>
+    )
+}
+
+export default UpArrow
