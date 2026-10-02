@@ -3,6 +3,8 @@
 // The contract for one Who We Help page. Adding an audience means writing one
 // WhoWeHelpContent object — no component changes.
 
+import type { StatItem } from "@/components/home/Statistics";
+
 export interface CtaLink {
   label: string;
   href: string;
@@ -56,8 +58,6 @@ export interface WhoWeHelpContent {
   deliver: {
     /** Each entry renders on its own line. */
     heading: string[];
-    /** Sits beside the heading from lg. */
-    image: ContentImage;
     /** Cards in a three-column grid from lg; any count works. */
     items: TextItem[];
   };
@@ -86,6 +86,13 @@ export interface WhoWeHelpContent {
     stats: { value: string; label: string }[];
     result: string;
     cta: CtaLink;
+  };
+
+  /** Stats band after Proof. Years in practice and countries are shared by
+   *  every page and live in WhoWeHelpPage; only these two vary. */
+  stats: {
+    projects: StatItem;
+    clients: StatItem;
   };
 
   /** Section E. */

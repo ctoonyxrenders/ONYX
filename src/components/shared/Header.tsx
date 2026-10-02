@@ -31,11 +31,20 @@ export default function Header() {
   const solid = scrolled || openMenu !== null;
   const close = () => setOpenMenu(null);
 
+  // Pages whose first section is a dark full-bleed hero under the header.
+  // While the header is transparent there, its text turns white; everywhere
+  // else the transparent header sits on a light page and stays black.
+  const overDarkHero = pathname === "/" || pathname.startsWith("/who-we-help/");
+  const light = overDarkHero && !solid;
+  const hover = light ? "hover:text-white/70" : "hover:text-brand";
+
   return (
     <header
       onMouseLeave={close}
       className={`fixed top-0 left-0 w-full z-40 transition-colors duration-300 ${
-        solid ? "bg-white text-black shadow-sm" : "bg-transparent text-black"
+        solid
+          ? "bg-white text-black shadow-sm"
+          : `bg-transparent ${light ? "text-white" : "text-black"}`
       }`}
     >
       {/* Desktop Header */}
@@ -62,7 +71,7 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="nav flex items-center hover:text-brand transition-colors"
+                  className={`nav flex items-center ${hover} transition-colors`}
                 >
                   {item.label}
                 </Link>
@@ -81,7 +90,7 @@ export default function Header() {
                   type="button"
                   aria-expanded={isMenuOpen}
                   onClick={() => setOpenMenu(isMenuOpen ? null : item.label)}
-                  className={`inline-flex items-center gap-1 nav transition-colors hover:text-brand ${
+                  className={`inline-flex items-center gap-1 nav transition-colors ${hover} ${
                     isMenuOpen ? "text-brand underline underline-offset-8" : ""
                   }`}
                 >
@@ -112,7 +121,7 @@ export default function Header() {
         <div className="flex items-center gap-6">
           <Link
             href="/dashboard/login"
-            className="nav text-secondary hover:text-brand transition-colors"
+            className={`nav ${light ? "text-white" : "text-secondary"} ${hover} transition-colors`}
           >
             Sign in
           </Link>

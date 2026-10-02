@@ -51,11 +51,6 @@ const homeowners: WhoWeHelpContent = {
 
   deliver: {
     heading: ["Built for what you need", "it to achieve"],
-    // TEMPORARY placeholder until the real image is supplied.
-    image: {
-      src: "/placeholders/slider-02.svg",
-      alt: "Rendered exterior of a family home at dusk",
-    },
     items: [
       {
         title: "Exterior views",
@@ -145,6 +140,11 @@ const homeowners: WhoWeHelpContent = {
     result: "Result: facade chosen in one week, no changes on site",
     // TEMPORARY: points at the gallery until a case study page exists.
     cta: { label: "Read the case study", href: "/gallery" },
+  },
+
+  stats: {
+    projects: { target: 110, suffix: "+", label: "Successful Projects" },
+    clients: { target: 55, suffix: "", label: "Happy Clients" },
   },
 
   faqs: {

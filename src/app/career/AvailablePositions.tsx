@@ -4,10 +4,18 @@ import Link from 'next/link';
 
 function AvailablePositions() {
   const jobPositions = [
+    { jobTitle: 'ARCHITECT | DESIGN TEAM', redirectUrl: `/career/job/${'architect'}` },
+    { jobTitle: 'INTERIOR DESIGNER', redirectUrl: `/career/job/${'interior-designer'}` },
     { jobTitle: '3D ARTIST | ANIMATION TEAM', redirectUrl: `/career/job/${'3d-artist-animation'}` },
     { jobTitle: '3D ARTIST | STILL IMAGE TEAM', redirectUrl: `/career/job/${'3d-artist-stillimage'}` },
+    { jobTitle: 'REAL-TIME / UNREAL DEVELOPER', redirectUrl: `/career/job/${'real-time-developer'}` },
     { jobTitle: '3D MODELER', redirectUrl: `/career/job/${'3d-modeler'}` },
+    { jobTitle: 'BIM MODELER / COORDINATOR', redirectUrl: `/career/job/${'bim-modeler'}` },
+    { jobTitle: 'ARCHITECTURAL TECHNOLOGIST | DOCUMENTATION', redirectUrl: `/career/job/${'architectural-technologist'}` },
     { jobTitle: '2D ARCHITECTURAL DRAFTING', redirectUrl: `/career/job/${'2d-architectural-drafting'}` },
+    { jobTitle: 'PROJECT COORDINATOR', redirectUrl: `/career/job/${'project-coordinator'}` },
+    { jobTitle: 'BUSINESS DEVELOPMENT EXECUTIVE', redirectUrl: `/career/job/${'business-development-executive'}` },
+    { jobTitle: 'INTERNSHIP | ARCHITECTURE & VISUALIZATION', redirectUrl: `/career/job/${'internship'}` },
   ];
 
   return (

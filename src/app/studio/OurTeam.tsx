@@ -30,7 +30,7 @@ async function OurTeam() {
             You work with the same team from brief to delivery, led by a single point of contact.
           </p>
         </div>
-        <button className="btn-pill border border-[#114046] bg-white text-[#114046] hover:text-white hover:bg-[#114046] hover:border-[#114046] cursor-pointer transition-colors text-xs lg:text-sm xl:text-base min-w-[210px] flex items-center justify-center gap-3 mx-auto px-6 py-2 lg:px-8 lg:py-3">
+        <button className="btn-pill border border-[#114046] bg-white text-black hover:text-white hover:bg-[#114046] hover:border-[#114046] cursor-pointer transition-colors text-xs lg:text-sm xl:text-base min-w-[210px] flex items-center justify-center gap-3 mx-auto px-6 py-2 lg:px-8 lg:py-3">
           <div className="-space-x-2 flex">
             {sortedTeamMembers.slice(0, 5).map((member) => (
               <div key={member.id} className="w-8 h-8 relative">

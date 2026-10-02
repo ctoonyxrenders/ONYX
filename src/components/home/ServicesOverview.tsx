@@ -16,13 +16,15 @@ const groupImages: Record<string, string> = {
 export default function ServicesOverview() {
   return (
     <section className="bg-[#114046] text-white section">
-  <div className="flex flex-col lg:flex-row lg:items-start gap-10 md:gap-14">
-  <h2 className="heading lg:w-1/2 flex flex-col gap-2 md:gap-4 [word-spacing:0.15em] max-w-2xl">
-    <span>Every visual you need, from</span>
+  <div className="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-10 md:gap-14">
+  {/* The first line is 666px at the 48px heading size: kept on one line from
+      md, and the row layout waits for xl, where it fits beside the text. */}
+  <h2 className="heading xl:shrink-0 flex flex-col gap-2 md:gap-4 [word-spacing:0.15em]">
+    <span className="md:whitespace-nowrap">Every visual you need, from</span>
     <span className="font-bold text-white">one Studio</span>
   </h2>
 
-  <p className="text-small text-white/70 lg:w-1/2 max-w-lg">
+  <p className="text-small text-white/70 max-w-md">
     {services.length} services in four groups. Pick one, or combine them into a full launch package.
   </p>
 </div>
@@ -66,7 +68,7 @@ export default function ServicesOverview() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8 mt-12 md:mt-16">
         <p className="text-small text-white/70">Not sure which service fits your project?</p>
         <Link href="/studio/#scheduleCall">
-          <button className="btn-pill bg-white/10 text-white border border-white/30 hover:bg-white hover:text-[#114046]">
+          <button className="btn-pill bg-white/10 text-white border border-white/30 hover:bg-white hover:text-black">
             Request a Proposal
           </button>
         </Link>

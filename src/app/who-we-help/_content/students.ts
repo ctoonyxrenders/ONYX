@@ -52,11 +52,6 @@ const students: WhoWeHelpContent = {
 
   deliver: {
     heading: ["Built for what you need", "it to achieve"],
-    // TEMPORARY placeholder until the real image is supplied.
-    image: {
-      src: "/placeholders/slider-02.svg",
-      alt: "Hero view of a student thesis scheme",
-    },
     items: [
       {
         title: "Jury imagery",
@@ -146,6 +141,11 @@ const students: WhoWeHelpContent = {
     result: "Result: delivered four days before submission",
     // TEMPORARY: points at the gallery until a case study page exists.
     cta: { label: "Read the case study", href: "/gallery" },
+  },
+
+  stats: {
+    projects: { target: 55, suffix: "", label: "Successful Projects" },
+    clients: { target: 25, suffix: "", label: "Happy Clients" },
   },
 
   faqs: {

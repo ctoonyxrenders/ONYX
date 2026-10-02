@@ -14,8 +14,8 @@ import HowWeThink from "./Howwethink";
 import {ServicesOverview} from "@/components/home";
 import Standards from "./Standards";
 import Careers from "./Careers";
-import NextStep from "./Nextstep";
 import ErrorBoundary from "@/components/shared/ErrorBoundary";
+import FooterCTA from "@/components/shared/FooterCTA";
 
 const Page = () => {
   return (
@@ -49,7 +49,15 @@ const Page = () => {
       </ErrorBoundary>
       
       <Careers/>
-    <NextStep/>
+
+      {/* The site-wide closing band, with the About page's Next Step copy. */}
+      <FooterCTA
+        eyebrow="Next step"
+        heading={["Tell us what you're", "building."]}
+        body="Send drawings, a sketch or just the brief. You'll have a scoped proposal within 24 hours. Prefer to talk it through first? Book a 30-minute session with the studio."
+        actions={[{ label: "Request a Proposal", href: "/studio/#scheduleCall" }]}
+        note="4 quick questions. Reply within 24 hours."
+      />
 
 
     </>

@@ -1,11 +1,20 @@
 import React from "react";
 import CountUp from "../shared/CountUp";
 
-interface StatisticsProps {
-  variant?: "light" | "dark";
+export interface StatItem {
+  target: number;
+  /** Rendered straight after the number, e.g. "+" or "+ Years". */
+  suffix: string;
+  label: string;
 }
 
-const statsData = [
+interface StatisticsProps {
+  variant?: "light" | "dark";
+  /** Defaults to the Home page figures. */
+  stats?: StatItem[];
+}
+
+const statsData: StatItem[] = [
   { target: 9, suffix: "+ Years", label: "in Practice" },
   { target: 1100, suffix: "+", label: "Successful Projects" },
   { target: 225, suffix: "+", label: "Happy Clients" },
@@ -13,7 +22,7 @@ const statsData = [
   { target: 93, suffix: "%", label: "Repeat & Preferred" },
 ];
 
-const Statistics = async ({ variant = "light" }: StatisticsProps = {}) => {
+const Statistics = async ({ variant = "light", stats = statsData }: StatisticsProps = {}) => {
   const isDark = variant === "dark";
   
   const bgClass = isDark ? "bg-[#113f45]" : "";
@@ -26,9 +35,12 @@ const Statistics = async ({ variant = "light" }: StatisticsProps = {}) => {
       className={`w-full min-h-[200px] flex items-center justify-center ${paddingClass} ${bgClass}`}
     >
       <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 lg:gap-24 px-6 md:px-0 w-full">
-        {statsData.map((stat) => (
+        {stats.map((stat) => (
           <div key={stat.label} className="flex flex-col items-center justify-center text-center">
-            <h3 className={`heading mb-2 ${headingClass}`}>
+            {/* Smaller than .heading on phones only; md:text-5xl restates the
+                .heading size because a plain text-2xl would override it at
+                every width. */}
+            <h3 className={`heading text-2xl md:text-5xl mb-2 ${headingClass}`}>
               <CountUp target={stat.target} />
               {stat.suffix}
             </h3>

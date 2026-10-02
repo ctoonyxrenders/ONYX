@@ -39,7 +39,7 @@ export default function ProcessSteps({
   return (
     <section className="px-6 md:px-16 lg:px-20 section-y">
       {(heading || intro) && (
-        <div className="flex flex-col lg:flex-row lg:items-start gap-6 md:gap-8 lg:gap-24 xl:gap-32 mb-12 md:mb-20">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 md:gap-8 lg:gap-24 xl:gap-32 mb-12 md:mb-20">
           {heading && (
             <h2 className={`${HEADING} lg:w-1/2 flex flex-col gap-2 md:gap-4 tracking-wide leading-[1.15]`}>
               {heading.split("\n").map((line) => (
@@ -50,7 +50,7 @@ export default function ProcessSteps({
             </h2>
           )}
           {intro && (
-            <p className={`${BODY} lg:w-1/2 max-w-2xl `}>
+            <p className={`${BODY} max-w-md`}>
               {intro}
             </p>
           )}

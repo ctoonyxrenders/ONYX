@@ -1,31 +1,16 @@
 // src/app/who-we-help/_components/ProcessSection.tsx
 //
-// Section C: label, heading, four ruled steps, then a before/after pair shown
-// as one frame. The pair stacks on mobile and sits side by side from sm.
+// Section C: label, heading, four ruled steps, then the before/after pair in
+// the Home page's drag-to-compare slider. The frame keeps the size the pair
+// had as two side-by-side 4:3 images (8:3 from sm); on phones, where the pair
+// used to stack, it is a single 4:3 frame.
 
-import Image from "next/image";
-import { blurDataURL } from "@/constants";
+import CompareSlider from "@/components/shared/CompareSlider";
 import { HEADING, SMALL } from "@/components/shared/typography";
-import type { ContentImage, WhoWeHelpContent } from "../_types";
+import type { WhoWeHelpContent } from "../_types";
 import SectionLabel from "./SectionLabel";
 import NumberedList from "./NumberedList";
 import Lines from "./Lines";
-
-function ComparisonImage({ image }: { image: ContentImage }) {
-  return (
-    <div className="relative aspect-[4/3]">
-      <Image
-        src={image.src}
-        alt={image.alt}
-        fill
-        sizes="(max-width: 640px) 100vw, 50vw"
-        placeholder="blur"
-        blurDataURL={blurDataURL}
-        className="object-cover"
-      />
-    </div>
-  );
-}
 
 export default function ProcessSection({
   process,
@@ -47,10 +32,13 @@ export default function ProcessSection({
       </div>
 
       <figure className="mt-10 md:mt-14">
-        <div className="grid grid-cols-1 sm:grid-cols-2 overflow-hidden rounded-lg bg-subtle">
-          <ComparisonImage image={comparison.before} />
-          <ComparisonImage image={comparison.after} />
-        </div>
+        <CompareSlider
+          before={comparison.before}
+          after={comparison.after}
+          label="Compare before and after"
+          sizes="100vw"
+          className="aspect-[4/3] sm:aspect-[8/3] rounded-lg"
+        />
         <figcaption className={`${SMALL} mt-3 md:mt-4 text-secondary`}>
           {comparison.caption}
         </figcaption>

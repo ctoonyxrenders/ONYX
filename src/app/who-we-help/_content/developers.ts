@@ -51,11 +51,6 @@ const developers: WhoWeHelpContent = {
 
   deliver: {
     heading: ["Built for what you need", "it to achieve"],
-    // TEMPORARY placeholder until the real image is supplied.
-    image: {
-      src: "/placeholders/slider-02.svg",
-      alt: "Night view of the development's residential blocks",
-    },
     items: [
       {
         title: "Launch imagery",
@@ -143,6 +138,11 @@ const developers: WhoWeHelpContent = {
     result: "Result: first phase sold before groundbreaking",
     // TEMPORARY: points at the gallery until a case study page exists.
     cta: { label: "Read the case study", href: "/gallery" },
+  },
+
+  stats: {
+    projects: { target: 330, suffix: "+", label: "Successful Projects" },
+    clients: { target: 42, suffix: "", label: "Happy Clients" },
   },
 
   faqs: {

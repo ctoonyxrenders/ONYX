@@ -11,7 +11,7 @@ export async function getMember() {
  
 export default function ClientReviews() {
   return (
-    <section className="flex lg:px-10 pb-[var(--section-y)] justify-center items-center w-full">
+    <section className="flex lg:px-10 section-y justify-center items-center w-full">
       <ClientCard {...testimonials[0]} />
     </section>
   );
@@ -19,14 +19,14 @@ export default function ClientReviews() {
 
 function ClientCard(props: Testimony) {
   return (
-    <div className="lg:text-xl xl:text-2xl sm:h-[60vh] lg:h-fit sm:flex p-4 gap-2 lg:gap-5 w-[98%] sm:w-[80%] xl:w-[70%]">
+    <div className="sm:flex p-4 gap-2 lg:gap-5 w-[98%] sm:w-[80%] xl:w-[70%]">
       <div className="relative w-[50%] sm:w-[45%] xl:w-[50%] aspect-[3/4] mx-auto sm:mx-0">
         <Image placeholder="blur"
           blurDataURL={blurDataURL} src={props.img} alt="client" className="object-cover" fill />
       </div>
       <div className="w-full flex flex-col justify-between pl-[2%] mt-[10%] sm:mt-0 text-[#00000099]">
-        <div className="flex flex-col text-xs sm:text-[1.35vw] md:text-[1.22vw] xl:text-[1.02vw] text-justify">
-          <h2 className="text-[#000000] text-base sm:text-[2.2vw] mb-[2%]">
+        <div className="flex flex-col text-small text-justify">
+          <h2 className="heading text-[#000000] mb-[2%]">
             A Word from the CEO
           </h2>
           <p className="my-[3%] poppins">Respected candidate,</p>
@@ -37,7 +37,7 @@ function ClientCard(props: Testimony) {
           </p>
           <p className=" leading-none poppins">{props.closingPara}</p>
         </div>
-        <div className="flex flex-col text-xs sm:text-[1.5vw] xl:text-[1.2vw]">
+        <div className="flex flex-col text-small">
           <h6 className=" text-[#000000]  leading-none pt-[5%] pb-[3%]  sm:py-[2%]">
             Awais Khalid{" "}
           </h6>

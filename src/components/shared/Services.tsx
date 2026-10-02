@@ -116,7 +116,7 @@ const Services = () => {
       {/* Button Section */}
       <div className="flex justify-center items-center my-20">
         <Link href="/career">
-        <button className=" text-white border border-white btn-pill hover:bg-white hover:text-[#114046]">
+        <button className=" text-white border border-white btn-pill hover:bg-white hover:text-black">
           Join our team
         </button>
         </Link>

@@ -58,7 +58,7 @@ export default function WhoWeHelpHero({
             </Link>
             <Link
               href={hero.secondaryCta.href}
-              className="btn-pill inline-flex justify-center border border-white text-white hover:bg-white hover:text-[#114046]"
+              className="btn-pill inline-flex justify-center border border-white text-white hover:bg-white hover:text-black"
             >
               {hero.secondaryCta.label}
             </Link>

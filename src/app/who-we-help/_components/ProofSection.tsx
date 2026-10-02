@@ -36,7 +36,7 @@ export default function ProofSection({
         </div>
 
         <div className="p-6 md:p-10 lg:p-12">
-          <h2 className={`${HEADING} lg:text-4xl leading-tight`}>
+          <h2 className={`${HEADING} leading-tight`}>
             <Lines lines={proof.heading} />
           </h2>
 

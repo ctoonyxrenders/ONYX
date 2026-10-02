@@ -20,4 +20,4 @@
 
 export const BUTTON_THEME = "bg-[#114046] text-white border border-[#114046] hover:bg-[#0e3035]";
 export const BUTTON_OUTLINE = "border border-[#114046] text-[#114046] hover:bg-[#114046] hover:text-white";
-export const BUTTON_WHITE = "bg-white text-[#114046] border border-white hover:bg-transparent hover:text-white";
+export const BUTTON_WHITE = "bg-white text-black border border-white hover:bg-transparent hover:text-white";

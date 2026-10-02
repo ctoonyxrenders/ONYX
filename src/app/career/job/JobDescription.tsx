@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { boldOnyxRenders } from "@/utils";
-interface jobDataType {
+export interface jobDataType {
   title: string;
   jobDescription: string;
   position: string;
@@ -8,10 +8,32 @@ interface jobDataType {
   jobType: string;
   keyResponsibilities: string[];
   skillExperience: string[];
-  offer: string[];
-  howToApply: (string | React.ReactNode)[];
-  callToAction: string;
+  /** Optional sections render only when present, in the same styles. */
+  offer?: string[];
+  callToAction?: string;
 }
+
+/** Shared by every role: the assessment brief lives in this Drive folder. */
+const ASSESSMENT_FOLDER =
+  "https://drive.google.com/drive/folders/19oAQs-JXkuLLUJWYCZZfVIMzXglr-0c0";
+
+const HOW_TO_APPLY: React.ReactNode[] = [
+  "Read the job description thoroughly",
+  <>
+    Complete the assessment in this document{" "}
+    <a
+      className="inline mb-1 text-blue-600 underline"
+      href={ASSESSMENT_FOLDER}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      here
+    </a>
+  </>,
+  "Upload your assessment to Google Drive",
+  "Make the Google Drive folder public",
+  "Copy the link of the folder and paste it in the application form",
+];
 
 interface JobDescriptionProps {
   jobData: jobDataType;
@@ -19,7 +41,11 @@ interface JobDescriptionProps {
 
 const JobDescription = ({ jobData }: JobDescriptionProps) => {
   return (
-    <>
+    // White page, pulled up behind the transparent site header (AppWrapper
+    // offsets every page by --header-h) so there is no grey strip under the
+    // navbar. flow-root keeps the last section's bottom margin inside the
+    // white background instead of collapsing through it.
+    <div className="flow-root bg-white -mt-[var(--header-h)] pt-[var(--header-h)]">
       <section className="overflow-hidden flex flex-col gap-4 relative top-[-1vw]">
         <h1 className="text-[#B9B9B933] text-[20vw] leading-none text-nowrap -translate-x-[4vw]">
           APPLY NOW
@@ -75,27 +101,29 @@ const JobDescription = ({ jobData }: JobDescriptionProps) => {
             })}
           </ul>
         </div>
-        <div>
-          <h1 className="sub-heading max-md:mt-[15px] mt-[40px]">
-            What We Offer:
-          </h1>
-          <ul className="list-disc px-[2vw] text-[#00000099] text-[1.5vw] w-[85%] max-md:text-[3.5vw] max-md:w-full">
-            {jobData.offer.map((res: string, idx: number) => {
-              return (
-                <li className="my-2 lg:my-7 para text-justify" key={idx}>
-                  {res}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        {jobData.offer && (
+          <div>
+            <h1 className="sub-heading max-md:mt-[15px] mt-[40px]">
+              What We Offer:
+            </h1>
+            <ul className="list-disc px-[2vw] text-[#00000099] text-[1.5vw] w-[85%] max-md:text-[3.5vw] max-md:w-full">
+              {jobData.offer.map((res: string, idx: number) => {
+                return (
+                  <li className="my-2 lg:my-7 para text-justify" key={idx}>
+                    {res}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
         <div>
           <h1 className="sub-heading max-md:mt-[15px] mt-[40px]">
             How to Apply
           </h1>
           <div className="mt-[20px] w-[85%] max-md:w-full">
             <ul className="list-disc px-[2vw] text-[#00000099] text-[1.5vw] max-md:text-[3.5vw]">
-              {jobData.howToApply.map((res, idx: number) => {
+              {HOW_TO_APPLY.map((res, idx: number) => {
                 return (
                   <li className="my-2 lg:my-7 para text-justify" key={idx}>
                     {res}
@@ -105,14 +133,16 @@ const JobDescription = ({ jobData }: JobDescriptionProps) => {
             </ul>
           </div>
         </div>
-        <div>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: boldOnyxRenders(jobData.callToAction),
-            }}
-            className="text-[#00000099] para w-[85%] max-md:mt-[15px] mt-[30px] text-justify max-md:w-full"
-          ></p>
-        </div>
+        {jobData.callToAction && (
+          <div>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: boldOnyxRenders(jobData.callToAction),
+              }}
+              className="text-[#00000099] para w-[85%] max-md:mt-[15px] mt-[30px] text-justify max-md:w-full"
+            ></p>
+          </div>
+        )}
         <div>
           <p className="text-[#00000099] para w-[85%] max-md:mt-[15px] mt-[30px] text-justify max-md:w-full">
             Apply Now and be part of our journey!
@@ -136,7 +166,7 @@ const JobDescription = ({ jobData }: JobDescriptionProps) => {
           Other Jobs
         </Link>
       </section>
-    </>
+    </div>
   );
 };
 

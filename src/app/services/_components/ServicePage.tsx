@@ -15,6 +15,7 @@ import HowWeWork from "./HowWeWork";
 import Faqs from "./Faqs";
 import AboutService from "./AboutService";
 import ScheduleCall from "@/components/shared/ScheduleCall";
+import FooterCTA from "@/components/shared/FooterCTA";
 
 export default function ServicePage({
   content,
@@ -57,6 +58,19 @@ export default function ServicePage({
       <Faqs items={content.faqs} />
 
       <AboutService about={content.about} />
+
+      {/* The site-wide closing band, with this service's CTA copy. An empty
+          eyebrow hides the Home page's default line. */}
+      <FooterCTA
+        eyebrow=""
+        heading={[content.cta.heading]}
+        actions={[
+          { label: content.cta.primaryLabel, href: content.cta.primaryHref },
+          ...(content.cta.secondaryLabel && content.cta.secondaryHref
+            ? [{ label: content.cta.secondaryLabel, href: content.cta.secondaryHref }]
+            : []),
+        ]}
+      />
     </>
   );
 }

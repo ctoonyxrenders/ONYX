@@ -51,11 +51,6 @@ const interiorDesigners: WhoWeHelpContent = {
 
   deliver: {
     heading: ["Built for what you need", "it to achieve"],
-    // TEMPORARY placeholder until the real image is supplied.
-    image: {
-      src: "/placeholders/slider-02.svg",
-      alt: "Rendered living room with the proposed finishes",
-    },
     items: [
       {
         title: "Concept visuals",
@@ -144,6 +139,11 @@ const interiorDesigners: WhoWeHelpContent = {
     result: "Result: approved with no changes on site",
     // TEMPORARY: points at the gallery until a case study page exists.
     cta: { label: "Read the case study", href: "/gallery" },
+  },
+
+  stats: {
+    projects: { target: 220, suffix: "+", label: "Successful Projects" },
+    clients: { target: 45, suffix: "", label: "Happy Clients" },
   },
 
   faqs: {

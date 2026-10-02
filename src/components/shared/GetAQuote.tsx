@@ -134,7 +134,7 @@ const GetAQuote: React.FC = () => {
           <div>
             <button
               type="submit"
-              className="bg-white text-[#114046] hover:bg-transparent hover:text-white border border-white btn-pill"
+              className="bg-white text-black hover:bg-transparent hover:text-white border border-white btn-pill"
             >
               Submit
             </button>

@@ -11,7 +11,6 @@ interface jobDataType {
   keyResponsibilities: string[];
   skillExperience: string[];
   offer: string[];
-  howToApply: (string | React.ReactNode)[];
   callToAction: string;
 }
 
@@ -19,55 +18,36 @@ const page = () => {
   const jobData: jobDataType = {
     title: "2D Architectural Drafting",
     jobDescription:
-      "At Onyx Renders, we bridge the gap between design concepts and reality through precise and detailed architectural drafting. We are looking for a skilled 2D Architectural Drafting Specialist to join our team and contribute to the creation of high-quality technical drawings for architectural and visualization projects.",
+      "You will produce the plans, elevations and sections that support every other output in the studio, including the marketing floor plans developers use in sales material.",
     position: "2D Architectural Drafting Specialist",
     location: "[Specify if Remote or Office-Based]",
-    jobType: "Full-Time",
+    jobType: "Full-Time · On-site · Reports to Documentation Lead",
     keyResponsibilities: [
-      "Produce accurate and detailed 2D architectural drawings for residential, commercial, and industrial projects.",
-      "Develop floor plans, elevations, sections, and technical details based on architectural specifications.",
-      "Interpret and convert CAD files, sketches, and 3D models into precise 2D representations.",
-      "Ensure drawings are optimized for use in 3D visualization, rendering, and construction documentation.",
-      "Collaborate with architects, designers, and 3D modelers to maintain consistency and accuracy across projects.",
-      "Adhere to industry standards, regulations, and client requirements for all technical drawings.",
-      "Revise and update drawings based on feedback and project changes.",
+      "Draft floor plans, elevations, sections and details to studio standard",
+      "Convert sketches, PDFs and survey information into clean CAD drawings",
+      "Prepare 2D and marketing floor plans for sales use",
+      "Maintain title blocks, layer standards and drawing registers",
+      "Issue revisions accurately and keep drawing records current",
+      "Support the documentation team on larger sets",
     ],
     skillExperience: [
-      "Strong experience in architectural drafting and technical drawing.",
-      "Proficiency in AutoCAD and Revit for precise drafting.",
-      "Understanding of architectural design principles, building codes, and construction detailing.",
-      "Experience working with 3D modelers and visualization teams to ensure seamless integration.",
-      "Ability to interpret blueprints, site plans, and construction documents.",
-      "Strong organizational skills and attention to detail.",
-      "Ability to work under tight deadlines while maintaining high accuracy.",
+      "1+ year of architectural drafting",
+      "Strong AutoCAD; Revit an advantage",
+      "Accuracy with dimensions, scale and annotation",
+      "Ability to interpret incomplete or inconsistent information",
+      "Attention to drawing conventions and consistency",
+      "Dependability on short turnarounds",
     ],
     offer: [
-      "Competitive salary based on experience and expertise.",
-      "Collaboration on international projects with top architects and designers.",
-      "A structured yet creative work environment that values technical excellence.",
-      "Access to the latest industry tools and software for high-end drafting.",
-      "Continuous learning opportunities and career growth.",
-    ],
-    howToApply: [
-      "Read the job description thoroughly",
-      <>
-        Complete the assessment in this document{" "}
-        <a
-          className="inline mb-1 text-blue-600 underline"
-          href="https://docs.google.com/document/d/1X4JH5k3a8b9c6d7e8f9g0h1i2j3k4l5m6n7o8p9q0r/edit?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          here
-        </a>
-      </>,
-      "Upload your assessment to Google Drive",
-      "Make the Google Drive folder public",
-      "Copy the link of the folder and paste it in the application form",
+      "Competitive salary, reviewed at six months and then annually.",
+      "Structured training into Revit and BIM within your first year.",
+      "Clear studio standards, templates and review, so you learn properly from the start.",
+      "Work across every project type we handle, not one drawing repeated.",
+      "A defined path into documentation or modeling, agreed with you.",
     ],
 
     callToAction:
-      "At Onyx Renders, precision in drafting is the foundation of great design. If you're passionate about architectural detailing and want to be part of a world-class team, we'd love to hear from you!",
+      "At ONYX RENDERS, good drafting is where most careers in this studio start. If you're accurate, fast and want to learn BIM properly, we'd like to hear from you.",
   };
   return (
     <main>

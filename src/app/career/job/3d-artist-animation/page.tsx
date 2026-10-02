@@ -10,63 +10,43 @@ interface jobDataType {
   keyResponsibilities: string[];
   skillExperience: string[];
   offer: string[];
-  howToApply: (string | React.ReactNode)[];
   callToAction: string;
 }
 
 const page = () => {
   const jobData: jobDataType = {
-    title: "3D ARTIST | Animation team",
-    jobDescription: `At ONYX RENDERS, we transform architectural visions into dynamic, lifelike animations that
-captivate and inspire. We are seeking a talented 3D Artist to join our Animation Team and
-contribute to the creation of high-end, photorealistic animations for architectural and visualization projects.`,
+    title: "3D Artist | Animation Team",
+    jobDescription: `You will create walkthroughs, flyovers and launch films that developers use to sell projects
+and architects use to win them. Films are often the highest-value deliverable on a project, and the
+sequence is yours to carry from camera plan to final grade.`,
     position: "3D Artist for Animation Team",
     location: "[Specify if Remote or Office-Based]",
-    jobType: "Full-Time",
+    jobType: "Full-Time · On-site · Reports to Visualization Lead",
     keyResponsibilities: [
-      "Create stunning, photorealistic 3D animations for architectural interiors, exteriors, and landscapes.",
-      "Develop detailed 3D models, materials, textures, lighting, and environments optimized for animation",
-      "Animate architectural elements, camera movements, and environmental effects to enhance visual storytelling.",
-      "Work closely with designers, architects, and the rendering team to ensure animation accuracy and artistic quality.",
-      "Optimize scenes for performance without compromising visual fidelity.",
-      "Stay up-to-date with the latest animation techniques, tools, and trends in architectural visualization",
-      "Revise animations based on client feedback and project adjustments.",
+      "Plan camera moves and shot sequences from the project brief",
+      "Model, texture and light scenes optimised for animation",
+      "Animate cameras, entourage and environmental effects",
+      "Manage render passes, sequence output and farm scheduling",
+      "Edit, grade and finish in After Effects or DaVinci Resolve, with sound where required",
+      "Keep film and still views visually consistent on the same project",
     ],
     skillExperience: [
-      "Strong experience in 3D animation and architectural visualization.",
-      "Proficiency in industry-standard software, including 3ds Max, Blender, Unreal Engine, Lumion, and D5 Render",
-      "In-depth understanding of key animation principles, camera movements, and scene composition.",
-      "Experience with rendering engines like V-Ray and Corona for high-quality output.",
-      "Ability to handle complex scenes, manage timelines, and meet tight deadlines.",
-      "A strong portfolio showcasing architectural animations and visual storytelling.",
-      "Excellent communication and collaboration skills.",
+      "2+ years producing architectural animation",
+      "3ds Max with Corona or V-Ray, or a real-time pipeline (Unreal, Lumion, D5)",
+      "Confident editing and compositing in After Effects or Premiere",
+      "A showreel demonstrating camera work and pacing, not only rendered movement",
+      "Understanding of sequence timing and how a film holds attention",
+      "Ability to manage long render schedules against fixed deadlines",
     ],
     offer: [
-      "Competitive salary based on experience and skill level.",
-      "The opportunity to work on prestigious international projects.",
-      "A creative and dynamic work environment with access to the latest industry tools.",
-      "Career growth opportunities and ongoing professional development.",
-      "The chance to be part of a team that values innovation, artistry, and attention to detail.",
+      "Competitive salary, reviewed annually.",
+      "Full ownership of a sequence, from camera plan through to final grade.",
+      "RTX workstations and render-farm capacity, so you are not waiting on frames.",
+      "Films used in launch campaigns and investor presentations, with reel rights retained.",
+      "Budget for the sound, stock and plugin tools that lift the finish.",
     ],
-    howToApply: [
-      "Read the job description thoroughly",
-      <>
-        Complete the assessment in this document{" "}
-        <a
-          className="inline mb-1 text-blue-600 underline"
-          href="https://docs.google.com/document/d/1X4JH5k3a8b9c6d7e8f9g0h1i2j3k4l5m6n7o8p9q0r/edit?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          here
-        </a>
-      </>,
-      "Upload your assessment to Google Drive",
-      "Make the Google Drive folder public",
-      "Copy the link of the folder and paste it in the application form",
-    ],
-    callToAction: `At ONYX RENDERS, we bring architecture to life through motion and artistry. If you're passionate about creating immersive 3D animations and want to work with a world-class
-                  team, we’d love to hear from you!`,
+    callToAction:
+      "At ONYX RENDERS, the film is often the piece a client remembers. If you know how pacing and camera work make a building feel inevitable, we'd like to see your reel.",
   };
   return (
     <main>
