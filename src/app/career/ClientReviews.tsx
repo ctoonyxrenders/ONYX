@@ -11,7 +11,7 @@ export async function getMember() {
  
 export default function ClientReviews() {
   return (
-    <section className="flex lg:px-10 section-y justify-center items-center w-full">
+    <section className="flex lg:px-10 pb-[var(--section-y)] justify-center items-center w-full">
       <ClientCard {...testimonials[0]} />
     </section>
   );

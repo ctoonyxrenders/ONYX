@@ -35,7 +35,7 @@ export const navItems: NavItem[] = [
     label: "Who we help",
     menu: "cards",
     cards: [
-      { label: "Developers & construction", href: "/who-we-help/developers", description: "Visuals that sell units" },
+      { label: "Real Estate Developers", href: "/who-we-help/developers", description: "Visuals that sell units" },
       { label: "Architects & landscape", href: "/who-we-help/architects", description: "Images that win projects" },
       { label: "Interior designers", href: "/who-we-help/interior-designers", description: "Faster client approvals" },
       { label: "Homeowners", href: "/who-we-help/homeowners", description: "Decide with confidence" },

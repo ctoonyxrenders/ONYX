@@ -31,17 +31,11 @@ export default function Header() {
   const solid = scrolled || openMenu !== null;
   const close = () => setOpenMenu(null);
 
-  const isHomePage = pathname === "/";
-
   return (
     <header
       onMouseLeave={close}
       className={`fixed top-0 left-0 w-full z-40 transition-colors duration-300 ${
-        isHomePage
-          ? solid
-            ? "bg-white text-black shadow-sm"
-            : "bg-transparent text-black"
-          : "bg-white text-black shadow-sm"
+        solid ? "bg-white text-black shadow-sm" : "bg-transparent text-black"
       }`}
     >
       {/* Desktop Header */}

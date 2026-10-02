@@ -24,7 +24,8 @@ export default function CardsMenu({
             onClick={onNavigate}
             className="border-2 border-brand hover:bg-subtle transition-colors p-5 md:p-6 group"
           >
-            <h3 className="tile-heading text-sm md:text-base group-hover:text-brand transition-colors">
+            {/* Same style as the Services mega menu group titles. */}
+            <h3 className="body-small-bold text-[#114046] uppercase tracking-wider group-hover:text-[#0e3035] transition-colors">
               {card.label}
             </h3>
             <p className="tile-text text-secondary text-xs md:text-sm mt-2 md:mt-3">

@@ -3,10 +3,18 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className="w-full section overflow-x-hidden bg-white">
-      <h1 className="text-[#B9B9B933] text-[26.8vw] leading-none">
-        <span className="relative left-[-3.5vw]">ABOUT</span>
-        <span className="relative right-[-3.5vw]">US</span>
+    // Pulled up behind the transparent site header (AppWrapper offsets every
+    // page by --header-h), so the header sits on white, not the grey body.
+    // Top padding equals the header height only, so "ABOUT US" starts
+    // directly below the navbar.
+    <div className="w-full section overflow-x-hidden bg-white -mt-[var(--header-h)] pt-[var(--header-h)]">
+      {/* Full-bleed, one line: the negative margin cancels the gutter, so the
+          words are cropped by the screen edges. "ABOUT US" is 4.636em wide in
+          Century Gothic; shifted 0.25em left at 24.2vw, about a third of the
+          "A" is cut on the left and half of the "S" on the right. Every value
+          is relative to the font size, so the crop is identical at all widths. */}
+      <h1 className="text-[#B9B9B933] text-[24.2vw] leading-none whitespace-nowrap -mx-[var(--gutter)]">
+        <span className="block -ml-[0.25em]">ABOUT US</span>
       </h1>
       <h2 className="heading mt-6 mb-4 md:mb-6">
         <span>Architects who </span>

@@ -26,7 +26,7 @@ function FAQ({ question, answer }: { question: string; answer: string }) {
           className={`${PAD_X} py-4 md:py-5 w-full flex items-center justify-between gap-4 text-left`}
         >
           <span
-            className={`${BODY} flex-1 transition-colors duration-300 ${
+            className={`${BODY} font-semibold flex-1 transition-colors duration-300 ${
               isOpen ? "text-[#114046]" : "text-black"
             }`}
           >
